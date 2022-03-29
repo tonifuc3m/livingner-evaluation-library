@@ -26,3 +26,14 @@ def main(datapath, relevant_labels):
     df_ok['offset'] = df_ok['off0'].astype(str) + ' ' + df_ok['off1'].astype(str)
     
     return df_ok
+
+
+def main_subtrack3(datapath):
+    
+    df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE)
+
+    if df.shape[0] == 0:
+        warnings.warn('There are not parsed annotations')
+        return df
+    
+    return df
