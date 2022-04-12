@@ -16,7 +16,7 @@ def warning_on_one_line(message, category, filename, lineno, file=None, line=Non
 warnings.formatwarning = warning_on_one_line
 
 
-def main(gs_path, pred_path, subtask=['ner','norm']):
+def main(gs_path, pred_path, codes_path, subtask=['ner','norm']):
     '''
     Load GS and Predictions; format them; compute precision, recall and 
     F1-score and show them.
@@ -37,8 +37,8 @@ def main(gs_path, pred_path, subtask=['ner','norm']):
     '''
     
     if subtask=='norm':
-        gs = ann_parsing.main(gs_path, ['SPECIES', 'HUMAN'])
-        pred = ann_parsing.main(pred_path, ['SPECIES', 'HUMAN'])
+        gs = ann_parsing.main(gs_path, ['SPECIES', 'HUMAN'], codes_path)
+        pred = ann_parsing.main(pred_path, ['SPECIES', 'HUMAN'], codes_path)
         
         if pred.shape[0] == 0:
             raise Exception('There are not parsed predicted annotations')
@@ -46,8 +46,8 @@ def main(gs_path, pred_path, subtask=['ner','norm']):
             raise Exception('There are not parsed Gold Standard annotations')
         
     elif subtask=='ner':
-        gs = ann_parsing.main(gs_path, ['SPECIES', 'HUMAN'])
-        pred = ann_parsing.main(pred_path, ['SPECIES', 'HUMAN'])
+        gs = ann_parsing.main(gs_path, ['SPECIES', 'HUMAN'], codes_path)
+        pred = ann_parsing.main(pred_path, ['SPECIES', 'HUMAN'], codes_path)
         
         if pred.shape[0] == 0:
             raise Exception('There are not parsed predicted annotations')

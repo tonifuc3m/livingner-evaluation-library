@@ -5,7 +5,7 @@ Created on Mon Jun  8 12:20:04 2020
 
 @author: antonio
 """
-
+import re
 import pandas as pd
 import warnings
 import csv
@@ -14,10 +14,13 @@ def warning_on_one_line(message, category, filename, lineno, file=None, line=Non
     return '%s:%s: %s: %s\n' % (filename, lineno, category.__name__, message)
 warnings.formatwarning = warning_on_one_line
 
-def main(datapath, relevant_labels):
+def main(datapath, relevant_labels, codes_path):
     
-    df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE)
+    # Load
+    valid_codes = set(map(lambda k: k.strip(), open(codes_path).readlines()))
+    df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE, keep_default_na=False)
 
+    # Check column names are correct
     if ','.join(df.columns) == ','.join(['filename','mark','label','off0','off1','span']):
         print("According to file headers, you are on subtask ner")
     elif ','.join(df.columns) == ','.join(['filename','mark','label','off0','off1',
@@ -29,49 +32,81 @@ def main(datapath, relevant_labels):
     else:
         raise Exception(f'Error! File headers are not correct {datapath}. Check https://temu.bsc.es/livingner/submission/')
 
+    # Check if there are annotations in file
     if df.shape[0] == 0:
         warnings.warn('There are not parsed annotations')
         return df
 
+    # Format DataFrame
     df_ok = df.loc[df['label'].isin(relevant_labels),:].copy()
     df_ok['offset'] = df_ok['off0'].astype(str) + ' ' + df_ok['off1'].astype(str)
     
+    # Check if there are duplicated entries
     if df_ok.shape[0] != df_ok.drop_duplicates(subset=['filename', 'label', 'offset']).shape[0]:
         warnings.warn(f"There are duplicated entries in {datapath}. Keeping just the first one...")
         df_ok = df_ok.drop_duplicates(subset=['filename', 'label', 'offset']).copy()
         
+    # Check codes are correct
     if "NCBITax" in df_ok.columns:
         # Remove "|" at the beginning and end of code column, in case they exist
-        df_ok.NCBITax = df_ok.NCBITax.apply(lambda k: k.strip("|"))
+        df_ok.loc[:,"NCBITax"] = df_ok["NCBITax"].apply(lambda k: k.strip("|"))
         
+        # Check all codes are valid, return lines with unvalid codes
+        unvalid_lines = check_valid_codes_in_column(df_ok, "NCBITax", valid_codes)
+        if len(unvalid_lines)>0:
+            unvalid_lines_str = list(map(lambda k: str(k), unvalid_lines))
+            warnings.warn(f"Lines {','.join(unvalid_lines_str)} in {datapath} contain unvalid codes. " +
+                          f"Valid codes are those that appear in {codes_path}. Ignoring lines with valid codes...")
+            df_ok = df_ok.drop(unvalid_lines).copy()
     return df_ok
 
 
-def main_subtrack3(datapath):
+def main_subtrack3(datapath, codes_path):
     
-    df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE)
+    # Load
+    valid_codes = set(map(lambda k: k.strip(), open(codes_path).readlines()))
+    valid_codes.add('NA')
+    df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE, keep_default_na=False)
 
+    # Check column names are correct
+    colnames = ['filename','isPet','PetIDs','isAnimalInjury', 'AnimalInjuryIDs',
+                'isFood','FoodIDs', 'isNosocomial','NosocomialIDs']
+    if ','.join(df.columns) != ','.join(colnames):
+        raise Exception(f'Error! File headers are not correct {datapath}. Check https://temu.bsc.es/livingner/submission/')
+        
+    # Check if there are annotations in file
     if df.shape[0] == 0:
         warnings.warn('There are not parsed annotations')
         return df
     
+    # Check if there are duplicated entries
     if df.shape[0] != df.drop_duplicates(subset=['filename']).shape[0]:
         warnings.warn(f"There are filenames with more than one row in {datapath}. Keeping just the first one...")
         df = df.drop_duplicates(subset=['filename']).copy()
+
+    # Check codes are correct
+    code_columns = ['PetIDs', 'AnimalInjuryIDs', 'FoodIDs', 'NosocomialIDs']
+    for colname in code_columns:
+        # Remove "|" and "+" at the beginning and end of code columns, in case they exist
+        df.loc[:,colname] = df[colname].apply(lambda k: k.strip("|"))
+        df.loc[:,colname] = df[colname].apply(lambda k: k.strip("+").replace('++', '+'))
         
-    if ','.join(df.columns) != ','.join(['filename','isPet','PetIDs','isAnimalInjury',
-                                         'AnimalInjuryIDs','IsFood','FoodIDs',
-                                         'isNosocomial','NosocomialIDs']):
-        raise Exception(f'Error! File headers are not correct {datapath}. Check https://temu.bsc.es/livingner/submission/')
-    # Remove "|" and "+" at the beginning and end of code columns, in case they exist
-    df.PetIDs = df.PetIDs.apply(lambda k: k.strip("|"))
-    df.PetIDs = df.PetIDs.apply(lambda k: k.strip("+"))
-    df.AnimalInjuryIDs = df.AnimalInjuryIDs.apply(lambda k: k.strip("|"))
-    df.AnimalInjuryIDs = df.AnimalInjuryIDs.apply(lambda k: k.strip("+"))
-    df.FoodIDs = df.FoodIDs.apply(lambda k: k.strip("|"))
-    df.FoodIDs = df.FoodIDs.apply(lambda k: k.strip("+"))
-    df.NosocomialIDs = df.NosocomialIDs.apply(lambda k: k.strip("|"))
-    df.NosocomialIDs = df.NosocomialIDs.apply(lambda k: k.strip("+"))
-    
+        # Check all codes are valid, return lines with unvalid codes
+        unvalid_lines = check_valid_codes_in_column(df, colname, valid_codes)
+        if len(unvalid_lines)>0:
+            unvalid_lines_str = list(map(lambda k: str(k), unvalid_lines))
+            warnings.warn(f"Lines {','.join(unvalid_lines_str)} in {datapath} contain unvalid codes. " +
+                          f"Valid codes are those that appear in {codes_path}. Ignoring lines with valid codes...")
+            df = df.drop(unvalid_lines).copy()
     
     return df
+
+def split_codes(k):
+    codes = k.replace('+', '|').replace('|H','').split('|')
+    return codes
+
+def check_valid_codes_in_column(df, colname, valid_codes):
+    return df.loc[df[colname].apply(lambda k: any([code not in valid_codes for code in split_codes(k)])),:].index
+    
+    
+    

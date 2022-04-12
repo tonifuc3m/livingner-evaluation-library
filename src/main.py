@@ -27,7 +27,7 @@ def parse_arguments():
     parser.add_argument("-p", "--pred_path", required = True, dest = "pred_path", 
                         help = "path to predictions file")
     parser.add_argument("-c", "--valid_codes_path", required = False, 
-                        default = '../valid-codes.tsv',
+                        default = '../ncbi_codes_unique.tsv',
                         dest = "codes_path", help = "path to valid codes TSV")
     parser.add_argument('-s', '--subtask', required = True, dest = 'subtask',
                         choices=['ner', 'norm', 'app'],
@@ -47,9 +47,9 @@ if __name__ == '__main__':
     gs_path, pred_path, codes_path, subtask = parse_arguments()
     
     if subtask == 'app':
-        livingner_app.main(gs_path, pred_path)
+        livingner_app.main(gs_path, pred_path, codes_path)
     elif subtask == 'ner':
-        livingner_ner_norm.main(gs_path, pred_path, subtask='ner')
+        livingner_ner_norm.main(gs_path, pred_path, codes_path, subtask='ner')
     elif subtask == 'norm':
-        livingner_ner_norm.main(gs_path, pred_path, subtask='norm')
+        livingner_ner_norm.main(gs_path, pred_path, codes_path, subtask='norm')
         

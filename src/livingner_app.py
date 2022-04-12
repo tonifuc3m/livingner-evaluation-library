@@ -5,7 +5,6 @@ Created on Mon Mar 21 15:22:29 2022
 
 @author: tonifuc3m
 """
-# TODO
 import ann_parsing
 import warnings
 import pandas as pd
@@ -20,79 +19,69 @@ def isNaN(num):
 def sort_codes(codes):
     return '+'.join(sorted(list(set(codes.split('+')))))
     
-def main(gs_path, pred_path):
+def main(gs_path, pred_path, codes_path):
     
-    gs = ann_parsing.main_subtrack3(gs_path)
-    pred = ann_parsing.main_subtrack3(pred_path)
+    gs = ann_parsing.main_subtrack3(gs_path, codes_path)
+    pred = ann_parsing.main_subtrack3(pred_path, codes_path)
+    
+    clinical_application = ['Pet', 'AnimalInjury', 'Food', 'Nosocomial']
     
     # Remove predicted duplicated codes & Order them to allow string comparison with
     # Gold Standard
     # E.g. if "3847+9913+9913" was predicted, set it to 3847+9913
-    colnames = ['Pet', 'Attack', 'Food']
-    for colname in colnames:
-        pred[colname.lower() + '_codes'] = pred[colname.lower() + '_codes'].\
+    for colname in clinical_application:
+        pred[colname + 'IDs'] = pred[colname + 'IDs'].\
             apply(lambda k: sort_codes(k) if isNaN(k) == False else k)
     
-        gs[colname.lower() + '_codes'] = gs[colname.lower() + '_codes'].\
+        gs[colname + 'IDs'] = gs[colname + 'IDs'].\
             apply(lambda k: sort_codes(k) if isNaN(k) == False else k)
     
+    # TODO: check codes are in terminology
+
     # Compute metrics
-    colnames = ['Pet', 'Attack', 'Food']
     print("Basic metrics (not taking into account NCBI codes, just Y/N assignment)")
     print('-----------------------------------------------------')
-    for colname in colnames: 
+    for colname in clinical_application: 
         print(colname)
         P_simple, R_simple, F1_simple, _, _, _ = compute_metrics(gs, pred, colname)
-        print(f"Precision = {P_simple}")
-        print(f"Recall = {R_simple}")
-        print(f"F1score = {F1_simple}")
+        print(f"Precision = {round(P_simple, 4)}")
+        print(f"Recall = {round(R_simple, 4)}")
+        print(f"F1score = {round(F1_simple, 4)}")
         print('-----------------------------------------------------')
     print('\n\n')
         
     print("Complex metrics (taking into account NCBI codes)")
     print('-----------------------------------------------------')
-    for colname in colnames: 
+    for colname in clinical_application: 
         print(colname)
         _, _, _ , P_complex, R_complex, F1_complex = compute_metrics(gs, pred, colname)
-        print(f"Precision = {P_complex}")
-        print(f"Recall = {R_complex}")
-        print(f"F1score = {F1_complex}")
+        print(f"Precision = {round(P_complex, 4)}")
+        print(f"Recall = {round(R_complex, 4)}")
+        print(f"F1score = {round(F1_complex, 4)}")
         print('-----------------------------------------------------')
     print('\n\n')
-    
-    # TODO: consider accepting parents and/or children? In several cases, it is described that
-    # "an insect" bites, and several sentences below it is specified that the
-    # insect is actually a mosquito, or other animal
-    # I am worried about this in the attack category, mainly. Food does not
-    # present this problem. And in pets the problem is almost non-eistent
-    # The main problem I see with food is my bias when annotating. We are annotating
-    # all SPECIES that are "eatable". I am not annotating dogs, but I include cows
-    # The issue I see with Pets are the distinction between sporadic and regular contacts.
-    
-    warnings.warn("The Clinical Impact Track evaluation library is still not available")
+
     
 def compute_metrics(gs, pred, colname):
     
     colname_v1 = 'is' + colname
-    colname_v2 = colname.lower() + '_codes'
+    colname_v2 = colname + 'IDs'
     
-    pred_this = pred[["filename", colname_v1, colname_v2]]
-    gs_this = gs[["filename", colname_v1, colname_v2]]
+    pred_this = pred[["filename", colname_v1, colname_v2]].copy()
+    gs_this = gs[["filename", colname_v1, colname_v2]].copy()
     
-    Pred_Pos = pred_this.loc[pred_this[colname_v1]=='Y'].shape[0]
-    GS_Pos = gs_this.loc[gs_this[colname_v1]=='Y'].shape[0]
+    Pred_Pos = pred_this.loc[pred_this[colname_v1]=='Yes'].shape[0]
+    GS_Pos = gs_this.loc[gs_this[colname_v1]=='Yes'].shape[0]
     
     df_sel = pd.merge(pred_this, gs_this,  how="right", on=["filename"])
     
-    TP_simple = df_sel.loc[(df_sel[colname_v1 + '_y']=='Y') & 
-                    (df_sel[colname_v1 + '_y']==df_sel[colname_v1 + '_x']),:].shape[0]
+    TP_simple = df_sel.loc[(df_sel[colname_v1 + '_y']=='Yes') & (df_sel[colname_v1 + '_x']=='Yes'),:].shape[0]
     
     # I am doing a string comparison to get the complex scores. This means,
     # The final metric is going to be macro-averaged by document. 
-    # TODO: decide whether I want this macro-metric or something more micro-metric
-    # based on codes. 
-    # TODO: Finally, also decide if I am allowing child or parent nodes
-    TP_complex = df_sel.loc[(df_sel[colname_v1 + '_y']=='Y') & 
+    # TODO: macro-metric (based on documents, current) vs micro-metric based on codes. 
+    # TODO: allowing vs not allowing child or parent nodes
+    TP_complex = df_sel.loc[(df_sel[colname_v1 + '_y']=='Yes') & (df_sel[colname_v1 + '_x']=='Yes') & 
                     (df_sel[colname_v2 + '_y']==df_sel[colname_v2 + '_x']),:].shape[0]
     
     if (Pred_Pos) == 0:
