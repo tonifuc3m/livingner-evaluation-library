@@ -72,7 +72,7 @@ def main(gs_path, pred_path, subtask=['ner','norm']):
     print('Clinical case name\t\t\tPrecision')
     print('-----------------------------------------------------')
     for index, val in P_per_cc.items():
-        print(str(index) + '\t\t' + str(round(val, 3)))
+        print(str(index) + '\t\t' + str(round(val, 4)))
         print('-----------------------------------------------------')
     '''if any(P_per_cc.isna()):
         warnings.warn('Some documents do not have predicted codes, ' + 
@@ -84,7 +84,7 @@ def main(gs_path, pred_path, subtask=['ner','norm']):
     print('Clinical case name\t\t\tRecall')
     print('-----------------------------------------------------')
     for index, val in R_per_cc.items():
-        print(str(index) + '\t\t' + str(round(val, 3)))
+        print(str(index) + '\t\t' + str(round(val, 4)))
         print('-----------------------------------------------------')
     '''if any(R_per_cc.isna()):
         warnings.warn('Some documents do not have Gold Standard codes, ' + 
@@ -95,7 +95,7 @@ def main(gs_path, pred_path, subtask=['ner','norm']):
     print('Clinical case name\t\t\tF-score')
     print('-----------------------------------------------------')
     for index, val in F1_per_cc.items():
-        print(str(index) + '\t\t' + str(round(val, 3)))
+        print(str(index) + '\t\t' + str(round(val, 4)))
         print('-----------------------------------------------------')
     '''if any(P_per_cc.isna()):
         warnings.warn('Some documents do not have predicted codes, ' + 
@@ -107,11 +107,11 @@ def main(gs_path, pred_path, subtask=['ner','norm']):
     print('\n-----------------------------------------------------')
     print('Micro-average metrics')
     print('-----------------------------------------------------')
-    print('\nMicro-average precision = {}\n'.format(round(P, 3)))
-    print('\nMicro-average recall = {}\n'.format(round(R, 3)))
-    print('\nMicro-average F-score = {}\n'.format(round(F1, 3)))
+    print('\nMicro-average precision = {}\n'.format(round(P, 4)))
+    print('\nMicro-average recall = {}\n'.format(round(R, 4)))
+    print('\nMicro-average F-score = {}\n'.format(round(F1, 4)))
     
-    print('{}|{}|{}|{}'.format(pred_path,round(P, 3),round(R, 3),round(F1, 3)))
+    print('{}|{}|{}|{}'.format(pred_path,round(P, 4),round(R, 4),round(F1, 4)))
 
 
 def calculate_metrics(gs, pred, subtask=['ner','norm']):
@@ -153,7 +153,6 @@ def calculate_metrics(gs, pred, subtask=['ner','norm']):
         pred.drop_duplicates(subset=relevant_columns).\
         groupby("filename")["offset"].count()
     Pred_Pos = pred.drop_duplicates(subset=relevant_columns).shape[0]
-    print(Pred_Pos)
 
     # Gold Standard Positives:
     GS_Pos_per_cc = \
@@ -175,7 +174,7 @@ def calculate_metrics(gs, pred, subtask=['ner','norm']):
         is_valid = df_sel.apply(lambda x: x.isnull().any()==False, axis=1)
         df_sel = df_sel.assign(is_valid=is_valid.values)
     else:
-        raise Exception('Error! Subtask name not properly set up')
+        raise Exception('Error! Subtask name not properly set up. Check https://github.com/tonifuc3m/livingner-evaluation-library')
 
         
     # True Positives:
