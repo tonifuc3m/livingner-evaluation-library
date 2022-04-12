@@ -1,55 +1,55 @@
-filename	mark	label	off0	off1	span	isN	iscomplex
-32032497_ES	T1	HUMAN	112	118	hombre	False	False
-32032497_ES	T2	HUMAN	1025	1033	paciente	False	False
-32032497_ES	T3	HUMAN	1098	1106	paciente	False	False
-32032497_ES	T4	HUMAN	1395	1403	paciente	False	False
-casos_clinicos_infecciosas141	T64	HUMAN	122	130	paciente	False	False
-casos_clinicos_infecciosas141	T65	HUMAN	951	959	paciente	False	False
-casos_clinicos_infecciosas141	T66	HUMAN	3707	3715	paciente	False	False
-casos_clinicos_infecciosas141	T67	HUMAN	4293	4301	paciente	False	False
-casos_clinicos_infecciosas141	T68	HUMAN	6250	6258	paciente	False	False
-casos_clinicos_infecciosas141	T69	HUMAN	6585	6593	paciente	False	False
-casos_clinicos_infecciosas141	T70	HUMAN	7258	7266	paciente	False	False
-casos_clinicos_infecciosas141	T71	HUMAN	7402	7410	paciente	False	False
-casos_clinicos_infecciosas141	T72	HUMAN	7747	7755	paciente	False	False
-casos_clinicos_infecciosas141	T73	HUMAN	8141	8149	paciente	False	False
-casos_clinicos_infecciosas141	T74	HUMAN	8722	8730	paciente	False	False
-casos_clinicos_infecciosas141	T75	HUMAN	8959	8967	paciente	False	False
-casos_clinicos_infecciosas141	T76	HUMAN	9196	9204	paciente	False	False
-casos_clinicos_infecciosas141	T77	HUMAN	9341	9349	paciente	False	False
-casos_clinicos_infecciosas141	T78	HUMAN	5184	5193	pacientes	False	False
-casos_clinicos_infecciosas141	T79	HUMAN	5436	5445	pacientes	False	False
-casos_clinicos_infecciosas141	T80	HUMAN	5738	5747	pacientes	False	False
-casos_clinicos_infecciosas141	T81	HUMAN	7057	7066	pacientes	False	False
-casos_clinicos_infecciosas141	T90	HUMAN	26	31	varón	False	False
-cc_onco908	T6	HUMAN	305	314	contactos	False	False
-cc_onco908	T7	HUMAN	344	351	familia	False	False
-cc_onco908	T11	HUMAN	330	338	paciente	False	False
-cc_onco908	T12	HUMAN	1323	1331	paciente	False	False
-cc_onco908	T13	HUMAN	2018	2026	paciente	False	False
-cc_onco908	T14	HUMAN	2579	2587	paciente	False	False
-cc_onco908	T15	HUMAN	3430	3438	paciente	False	False
-cc_onco908	T16	HUMAN	3766	3774	paciente	False	False
-cc_onco908	T17	HUMAN	3852	3860	paciente	False	False
-cc_onco908	T18	HUMAN	4517	4525	paciente	False	False
-cc_onco908	T19	HUMAN	13	18	varón	False	False
-cc_onco908	T20	HUMAN	205	210	varón	False	False
-caso_clinico_medtropical54	T1	HUMAN	2554	2560	Adulto	False	False
-caso_clinico_medtropical54	T4	HUMAN	0	18	Paciente masculino	False	False
-caso_clinico_medtropical54	T8	HUMAN	913	921	paciente	False	False
-caso_clinico_medtropical54	T9	HUMAN	1042	1050	paciente	False	False
-caso_clinico_medtropical54	T10	HUMAN	1970	1978	paciente	False	False
-caso_clinico_medtropical54	T11	HUMAN	2388	2396	paciente	False	False
-caso_clinico_medtropical54	T12	HUMAN	2842	2850	paciente	False	False
-caso_clinico_medtropical54	T15	HUMAN	925	961	conductor de un transporte colectivo	False	False
-casos_clinicos_infecciosas1	T9	HUMAN	0	5	Mujer	False	False
-casos_clinicos_infecciosas1	T24	HUMAN	75	83	infancia	False	False
-casos_clinicos_infecciosas1	T27	HUMAN	300	327	médico de atención primaria	False	False
-casos_clinicos_infecciosas1	T29	HUMAN	681	689	paciente	False	False
-casos_clinicos_infecciosas1	T30	HUMAN	873	881	paciente	False	False
-casos_clinicos_infecciosas1	T31	HUMAN	3497	3505	paciente	False	False
-casos_clinicos_infecciosas1	T32	HUMAN	4626	4634	paciente	False	False
-casos_clinicos_infecciosas1	T33	HUMAN	7292	7300	paciente	False	False
-casos_clinicos_infecciosas1	T34	HUMAN	7813	7821	paciente	False	False
-casos_clinicos_infecciosas1	T35	HUMAN	8042	8050	paciente	False	False
-casos_clinicos_infecciosas1	T36	HUMAN	4588	4596	personal	False	False
+filename	mark	label	off0	off1	span
+32032497_ES	T1	HUMAN	112	118	hombre
+32032497_ES	T2	HUMAN	1025	1033	paciente
+32032497_ES	T3	HUMAN	1098	1106	paciente
+32032497_ES	T4	HUMAN	1395	1403	paciente
+casos_clinicos_infecciosas141	T64	HUMAN	122	130	paciente
+casos_clinicos_infecciosas141	T65	HUMAN	951	959	paciente
+casos_clinicos_infecciosas141	T66	HUMAN	3707	3715	paciente
+casos_clinicos_infecciosas141	T67	HUMAN	4293	4301	paciente
+casos_clinicos_infecciosas141	T68	HUMAN	6250	6258	paciente
+casos_clinicos_infecciosas141	T69	HUMAN	6585	6593	paciente
+casos_clinicos_infecciosas141	T70	HUMAN	7258	7266	paciente
+casos_clinicos_infecciosas141	T71	HUMAN	7402	7410	paciente
+casos_clinicos_infecciosas141	T72	HUMAN	7747	7755	paciente
+casos_clinicos_infecciosas141	T73	HUMAN	8141	8149	paciente
+casos_clinicos_infecciosas141	T74	HUMAN	8722	8730	paciente
+casos_clinicos_infecciosas141	T75	HUMAN	8959	8967	paciente
+casos_clinicos_infecciosas141	T76	HUMAN	9196	9204	paciente
+casos_clinicos_infecciosas141	T77	HUMAN	9341	9349	paciente
+casos_clinicos_infecciosas141	T78	HUMAN	5184	5193	pacientes
+casos_clinicos_infecciosas141	T79	HUMAN	5436	5445	pacientes
+casos_clinicos_infecciosas141	T80	HUMAN	5738	5747	pacientes
+casos_clinicos_infecciosas141	T81	HUMAN	7057	7066	pacientes
+casos_clinicos_infecciosas141	T90	HUMAN	26	31	varón
+cc_onco908	T6	HUMAN	305	314	contactos
+cc_onco908	T7	HUMAN	344	351	familia
+cc_onco908	T11	HUMAN	330	338	paciente
+cc_onco908	T12	HUMAN	1323	1331	paciente
+cc_onco908	T13	HUMAN	2018	2026	paciente
+cc_onco908	T14	HUMAN	2579	2587	paciente
+cc_onco908	T15	HUMAN	3430	3438	paciente
+cc_onco908	T16	HUMAN	3766	3774	paciente
+cc_onco908	T17	HUMAN	3852	3860	paciente
+cc_onco908	T18	HUMAN	4517	4525	paciente
+cc_onco908	T19	HUMAN	13	18	varón
+cc_onco908	T20	HUMAN	205	210	varón
+caso_clinico_medtropical54	T1	HUMAN	2554	2560	Adulto
+caso_clinico_medtropical54	T4	HUMAN	0	18	Paciente masculino
+caso_clinico_medtropical54	T8	HUMAN	913	921	paciente
+caso_clinico_medtropical54	T9	HUMAN	1042	1050	paciente
+caso_clinico_medtropical54	T10	HUMAN	1970	1978	paciente
+caso_clinico_medtropical54	T11	HUMAN	2388	2396	paciente
+caso_clinico_medtropical54	T12	HUMAN	2842	2850	paciente
+caso_clinico_medtropical54	T15	HUMAN	925	961	conductor de un transporte colectivo
+casos_clinicos_infecciosas1	T9	HUMAN	0	5	Mujer
+casos_clinicos_infecciosas1	T24	HUMAN	75	83	infancia
+casos_clinicos_infecciosas1	T27	HUMAN	300	327	médico de atención primaria
+casos_clinicos_infecciosas1	T29	HUMAN	681	689	paciente
+casos_clinicos_infecciosas1	T30	HUMAN	873	881	paciente
+casos_clinicos_infecciosas1	T31	HUMAN	3497	3505	paciente
+casos_clinicos_infecciosas1	T32	HUMAN	4626	4634	paciente
+casos_clinicos_infecciosas1	T33	HUMAN	7292	7300	paciente
+casos_clinicos_infecciosas1	T34	HUMAN	7813	7821	paciente
+casos_clinicos_infecciosas1	T35	HUMAN	8042	8050	paciente
+casos_clinicos_infecciosas1	T36	HUMAN	4588	4596	personal

@@ -1,86 +1,86 @@
-filename	mark	label	off0	off1	span	isN	iscomplex
-32032497_ES	T5	SPECIES	1075	1084	2019-nCoV	False	False
-32032497_ES	T6	SPECIES	1111	1122	antivirales	False	False
-casos_clinicos_infecciosas141	T1	SPECIES	4752	4763	Aspergillus	False	False
-casos_clinicos_infecciosas141	T2	SPECIES	5100	5115	Aspergillus spp	False	False
-casos_clinicos_infecciosas141	T3	SPECIES	4670	4690	Campylobacter jejuni	False	False
-casos_clinicos_infecciosas141	T4	SPECIES	4627	4643	Candida albicans	False	False
-casos_clinicos_infecciosas141	T5	SPECIES	2427	2448	Clostridium difficile	False	False
-casos_clinicos_infecciosas141	T6	SPECIES	4718	4730	Coccidioides	False	False
-casos_clinicos_infecciosas141	T7	SPECIES	4589	4611	Histoplasma capsulatum	False	False
-casos_clinicos_infecciosas141	T8	SPECIES	4614	4624	Leishmania	False	False
-casos_clinicos_infecciosas141	T9	SPECIES	4795	4822	Mycobacterium avium complex	False	False
-casos_clinicos_infecciosas141	T10	SPECIES	6868	6895	Mycobacterium avium complex	False	False
-casos_clinicos_infecciosas141	T11	SPECIES	4766	4792	Mycobacterium tuberculosis	False	False
-casos_clinicos_infecciosas141	T12	SPECIES	6839	6865	Mycobacterium tuberculosis	False	False
-casos_clinicos_infecciosas141	T13	SPECIES	4693	4715	Pneumocystis jirovecii	False	False
-casos_clinicos_infecciosas141	T14	SPECIES	5537	5559	Pneumocystis jirovecii	False	False
-casos_clinicos_infecciosas141	T15	SPECIES	4646	4656	Salmonella	False	False
-casos_clinicos_infecciosas141	T16	SPECIES	5924	5938	Salmonella spp	False	False
-casos_clinicos_infecciosas141	T17	SPECIES	4659	4667	Shigella	False	False
-casos_clinicos_infecciosas141	T18	SPECIES	5941	5953	Shigella spp	False	False
-casos_clinicos_infecciosas141	T19	SPECIES	2356	2373	Toxoplasma gondii	False	False
-casos_clinicos_infecciosas141	T21	SPECIES	83	86	VHC	False	False
-casos_clinicos_infecciosas141	T22	SPECIES	378	381	VHC	False	False
-casos_clinicos_infecciosas141	T23	SPECIES	74	77	VIH	False	False
-casos_clinicos_infecciosas141	T24	SPECIES	7288	7291	VIH	False	False
-casos_clinicos_infecciosas141	T25	SPECIES	9371	9374	VIH	False	False
-casos_clinicos_infecciosas141	T30	SPECIES	216	231	antirretroviral	False	False
-casos_clinicos_infecciosas141	T31	SPECIES	7541	7553	baciloscopia	False	False
-casos_clinicos_infecciosas141	T32	SPECIES	6962	6973	bacterianos	False	False
-casos_clinicos_infecciosas141	T33	SPECIES	5908	5919	bacteriemia	False	False
-casos_clinicos_infecciosas141	T48	SPECIES	6810	6823	micobacterias	False	False
-casos_clinicos_infecciosas141	T49	SPECIES	7502	7515	micobacterias	False	False
-casos_clinicos_infecciosas141	T50	SPECIES	9100	9113	micobacterias	False	False
-casos_clinicos_infecciosas141	T61	SPECIES	5718	5732	microorganismo	False	True
-casos_clinicos_infecciosas141	T63	SPECIES	7574	7589	microorganismos	False	True
-casos_clinicos_infecciosas141	T82	SPECIES	2451	2460	parásitos	False	False
-casos_clinicos_infecciosas141	T87	SPECIES	8451	8467	tuberculostático	False	False
-casos_clinicos_infecciosas141	T88	SPECIES	8108	8125	tuberculostáticos	False	False
-casos_clinicos_infecciosas141	T89	SPECIES	9218	9235	tuberculostáticos	False	False
-casos_clinicos_infecciosas141	T91	SPECIES	178	183	viral	False	False
-casos_clinicos_infecciosas141	T92	SPECIES	401	406	viral	False	False
-casos_clinicos_infecciosas141	T93	SPECIES	469	474	viral	False	False
-casos_clinicos_infecciosas141	T94	SPECIES	5958	5971	Campylobacter	False	False
-casos_clinicos_infecciosas141	T95	SPECIES	6552	6561	T. gondii	False	False
-casos_clinicos_infecciosas141	T96	SPECIES	7002	7010	M. avium	False	False
-casos_clinicos_infecciosas141	T97	SPECIES	7340	7355	M. tuberculosis	False	False
-casos_clinicos_infecciosas141	T98	SPECIES	9059	9074	M. tuberculosis	False	False
-casos_clinicos_infecciosas141	T100	SPECIES	101	117	inmunovirológica	False	False
-casos_clinicos_infecciosas141	T101	SPECIES	2346	2353	sífilis	False	False
-casos_clinicos_infecciosas141	T102	SPECIES	4733	4749	Toxoplasmagondii	False	False
-casos_clinicos_infecciosas141	T103	SPECIES	4850	4858	fúngicas	False	False
-casos_clinicos_infecciosas141	T110	SPECIES	6063	6070	bacilar	False	False
-cc_onco908	T2	SPECIES	4097	4109	Nocardia spp	False	False
-cc_onco908	T3	SPECIES	4178	4186	Nocardia	False	False
-cc_onco908	T4	SPECIES	3716	3738	Pneumocystis jirovecii	False	False
-cc_onco908	T5	SPECIES	1879	1882	VIH	False	False
-cc_onco908	T21	SPECIES	1885	1894	hepatitis	False	True
-caso_clinico_medtropical54	T2	SPECIES	546	549	BCG	False	False
-caso_clinico_medtropical54	T5	SPECIES	510	535	amastigotes de Leishmania	False	False
-caso_clinico_medtropical54	T14	SPECIES	2596	2604	parásito	False	False
-caso_clinico_medtropical54	T17	SPECIES	1582	1593	leishmanina	False	False
-caso_clinico_medtropical54	T18	SPECIES	1772	1797	amastigotes de Leishmania	False	False
-caso_clinico_medtropical54	T20	SPECIES	1633	1647	antileishmania	False	False
-casos_clinicos_infecciosas1	T2	SPECIES	5853	5873	Chlamydia pneumoniae	False	False
-casos_clinicos_infecciosas1	T3	SPECIES	5988	6003	Citomegalovirus	False	False
-casos_clinicos_infecciosas1	T4	SPECIES	5899	5916	Coxiella burnetti	False	False
-casos_clinicos_infecciosas1	T5	SPECIES	5563	5580	Fusobacterium spp	False	False
-casos_clinicos_infecciosas1	T6	SPECIES	7095	7120	Fusobacterium necrophorum	False	False
-casos_clinicos_infecciosas1	T8	SPECIES	5682	5704	Legionella pneumophila	False	False
-casos_clinicos_infecciosas1	T10	SPECIES	5830	5851	Mycoplasma pneumoniae	False	False
-casos_clinicos_infecciosas1	T12	SPECIES	5655	5679	Streptococcus pneumoniae	False	False
-casos_clinicos_infecciosas1	T14	SPECIES	6004	6021	Toxoplasma gondii	False	False
-casos_clinicos_infecciosas1	T20	SPECIES	5766	5775	bacterias	False	False
-casos_clinicos_infecciosas1	T23	SPECIES	2915	2929	estreptocócico	False	False
-casos_clinicos_infecciosas1	T26	SPECIES	5778	5791	micobacterias	False	False
-casos_clinicos_infecciosas1	T45	SPECIES	6056	6086	virus inmunodeficiencia humana	False	False
-casos_clinicos_infecciosas1	T46	SPECIES	5919	5938	virus respiratorios	False	False
-casos_clinicos_infecciosas1	T48	SPECIES	5875	5897	Chlamydophila psittaci	False	False
-casos_clinicos_infecciosas1	T49	SPECIES	6023	6040	virus hepatitis A	False	False
-casos_clinicos_infecciosas1	T50	SPECIES	2857	2871	estreptocócica	False	False
-casos_clinicos_infecciosas1	T54	SPECIES	4797	4809	Bacteriemias	False	False
-casos_clinicos_infecciosas1	T56	SPECIES	5968	5986	Virus Epstein Barr	False	False
-casos_clinicos_infecciosas1	T57	SPECIES	6023	6042	virus hepatitis A,B	False	True
-casos_clinicos_infecciosas1	T58	SPECIES	6023	6044	virus hepatitis A,B,C	False	True
-casos_clinicos_infecciosas1	T62	SPECIES	6046	6053	rubeola	False	False
+filename	mark	label	off0	off1	span
+32032497_ES	T5	SPECIES	1075	1084	2019-nCoV
+32032497_ES	T6	SPECIES	1111	1122	antivirales
+casos_clinicos_infecciosas141	T1	SPECIES	4752	4763	Aspergillus
+casos_clinicos_infecciosas141	T2	SPECIES	5100	5115	Aspergillus spp
+casos_clinicos_infecciosas141	T3	SPECIES	4670	4690	Campylobacter jejuni
+casos_clinicos_infecciosas141	T4	SPECIES	4627	4643	Candida albicans
+casos_clinicos_infecciosas141	T5	SPECIES	2427	2448	Clostridium difficile
+casos_clinicos_infecciosas141	T6	SPECIES	4718	4730	Coccidioides
+casos_clinicos_infecciosas141	T7	SPECIES	4589	4611	Histoplasma capsulatum
+casos_clinicos_infecciosas141	T8	SPECIES	4614	4624	Leishmania
+casos_clinicos_infecciosas141	T9	SPECIES	4795	4822	Mycobacterium avium complex
+casos_clinicos_infecciosas141	T10	SPECIES	6868	6895	Mycobacterium avium complex
+casos_clinicos_infecciosas141	T11	SPECIES	4766	4792	Mycobacterium tuberculosis
+casos_clinicos_infecciosas141	T12	SPECIES	6839	6865	Mycobacterium tuberculosis
+casos_clinicos_infecciosas141	T13	SPECIES	4693	4715	Pneumocystis jirovecii
+casos_clinicos_infecciosas141	T14	SPECIES	5537	5559	Pneumocystis jirovecii
+casos_clinicos_infecciosas141	T15	SPECIES	4646	4656	Salmonella
+casos_clinicos_infecciosas141	T16	SPECIES	5924	5938	Salmonella spp
+casos_clinicos_infecciosas141	T17	SPECIES	4659	4667	Shigella
+casos_clinicos_infecciosas141	T18	SPECIES	5941	5953	Shigella spp
+casos_clinicos_infecciosas141	T19	SPECIES	2356	2373	Toxoplasma gondii
+casos_clinicos_infecciosas141	T21	SPECIES	83	86	VHC
+casos_clinicos_infecciosas141	T22	SPECIES	378	381	VHC
+casos_clinicos_infecciosas141	T23	SPECIES	74	77	VIH
+casos_clinicos_infecciosas141	T24	SPECIES	7288	7291	VIH
+casos_clinicos_infecciosas141	T25	SPECIES	9371	9374	VIH
+casos_clinicos_infecciosas141	T30	SPECIES	216	231	antirretroviral
+casos_clinicos_infecciosas141	T31	SPECIES	7541	7553	baciloscopia
+casos_clinicos_infecciosas141	T32	SPECIES	6962	6973	bacterianos
+casos_clinicos_infecciosas141	T33	SPECIES	5908	5919	bacteriemia
+casos_clinicos_infecciosas141	T48	SPECIES	6810	6823	micobacterias
+casos_clinicos_infecciosas141	T49	SPECIES	7502	7515	micobacterias
+casos_clinicos_infecciosas141	T50	SPECIES	9100	9113	micobacterias
+casos_clinicos_infecciosas141	T61	SPECIES	5718	5732	microorganismo
+casos_clinicos_infecciosas141	T63	SPECIES	7574	7589	microorganismos
+casos_clinicos_infecciosas141	T82	SPECIES	2451	2460	parásitos
+casos_clinicos_infecciosas141	T87	SPECIES	8451	8467	tuberculostático
+casos_clinicos_infecciosas141	T88	SPECIES	8108	8125	tuberculostáticos
+casos_clinicos_infecciosas141	T89	SPECIES	9218	9235	tuberculostáticos
+casos_clinicos_infecciosas141	T91	SPECIES	178	183	viral
+casos_clinicos_infecciosas141	T92	SPECIES	401	406	viral
+casos_clinicos_infecciosas141	T93	SPECIES	469	474	viral
+casos_clinicos_infecciosas141	T94	SPECIES	5958	5971	Campylobacter
+casos_clinicos_infecciosas141	T95	SPECIES	6552	6561	T. gondii
+casos_clinicos_infecciosas141	T96	SPECIES	7002	7010	M. avium
+casos_clinicos_infecciosas141	T97	SPECIES	7340	7355	M. tuberculosis
+casos_clinicos_infecciosas141	T98	SPECIES	9059	9074	M. tuberculosis
+casos_clinicos_infecciosas141	T100	SPECIES	101	117	inmunovirológica
+casos_clinicos_infecciosas141	T101	SPECIES	2346	2353	sífilis
+casos_clinicos_infecciosas141	T102	SPECIES	4733	4749	Toxoplasmagondii
+casos_clinicos_infecciosas141	T103	SPECIES	4850	4858	fúngicas
+casos_clinicos_infecciosas141	T110	SPECIES	6063	6070	bacilar
+cc_onco908	T2	SPECIES	4097	4109	Nocardia spp
+cc_onco908	T3	SPECIES	4178	4186	Nocardia
+cc_onco908	T4	SPECIES	3716	3738	Pneumocystis jirovecii
+cc_onco908	T5	SPECIES	1879	1882	VIH
+cc_onco908	T21	SPECIES	1885	1894	hepatitis
+caso_clinico_medtropical54	T2	SPECIES	546	549	BCG
+caso_clinico_medtropical54	T5	SPECIES	510	535	amastigotes de Leishmania
+caso_clinico_medtropical54	T14	SPECIES	2596	2604	parásito
+caso_clinico_medtropical54	T17	SPECIES	1582	1593	leishmanina
+caso_clinico_medtropical54	T18	SPECIES	1772	1797	amastigotes de Leishmania
+caso_clinico_medtropical54	T20	SPECIES	1633	1647	antileishmania
+casos_clinicos_infecciosas1	T2	SPECIES	5853	5873	Chlamydia pneumoniae
+casos_clinicos_infecciosas1	T3	SPECIES	5988	6003	Citomegalovirus
+casos_clinicos_infecciosas1	T4	SPECIES	5899	5916	Coxiella burnetti
+casos_clinicos_infecciosas1	T5	SPECIES	5563	5580	Fusobacterium spp
+casos_clinicos_infecciosas1	T6	SPECIES	7095	7120	Fusobacterium necrophorum
+casos_clinicos_infecciosas1	T8	SPECIES	5682	5704	Legionella pneumophila
+casos_clinicos_infecciosas1	T10	SPECIES	5830	5851	Mycoplasma pneumoniae
+casos_clinicos_infecciosas1	T12	SPECIES	5655	5679	Streptococcus pneumoniae
+casos_clinicos_infecciosas1	T14	SPECIES	6004	6021	Toxoplasma gondii
+casos_clinicos_infecciosas1	T20	SPECIES	5766	5775	bacterias
+casos_clinicos_infecciosas1	T23	SPECIES	2915	2929	estreptocócico
+casos_clinicos_infecciosas1	T26	SPECIES	5778	5791	micobacterias
+casos_clinicos_infecciosas1	T45	SPECIES	6056	6086	virus inmunodeficiencia humana
+casos_clinicos_infecciosas1	T46	SPECIES	5919	5938	virus respiratorios
+casos_clinicos_infecciosas1	T48	SPECIES	5875	5897	Chlamydophila psittaci
+casos_clinicos_infecciosas1	T49	SPECIES	6023	6040	virus hepatitis A
+casos_clinicos_infecciosas1	T50	SPECIES	2857	2871	estreptocócica
+casos_clinicos_infecciosas1	T54	SPECIES	4797	4809	Bacteriemias
+casos_clinicos_infecciosas1	T56	SPECIES	5968	5986	Virus Epstein Barr
+casos_clinicos_infecciosas1	T57	SPECIES	6023	6042	virus hepatitis A,B
+casos_clinicos_infecciosas1	T58	SPECIES	6023	6044	virus hepatitis A,B,C
+casos_clinicos_infecciosas1	T62	SPECIES	6046	6053	rubeola
