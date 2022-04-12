@@ -64,8 +64,8 @@ def main(gs_path, pred_path, subtask=['ner','norm']):
     pred_gs_subset = pred.loc[pred['filename'].isin(ann_list_gs),:]
     
     # Compute metrics
-    P_per_cc, P, R_per_cc, R, F1_per_cc, F1 = calculate_metrics(gs, pred_gs_subset, 
-                                                                subtask=subtask)
+    P_per_cc, P, R_per_cc, R, F1_per_cc, F1 = \
+        calculate_metrics(gs, pred_gs_subset, subtask=subtask)
         
     ###### Show results ######  
     print('\n-----------------------------------------------------')
@@ -146,23 +146,26 @@ def calculate_metrics(gs, pred, subtask=['ner','norm']):
         Micro-average F1-score
     '''
     
+    relevant_columns = ["filename", "offset", "label"]
+    
     # Predicted Positives:
     Pred_Pos_per_cc = \
-        pred.drop_duplicates(subset=['filename', "offset"]).\
+        pred.drop_duplicates(subset=relevant_columns).\
         groupby("filename")["offset"].count()
-    Pred_Pos = pred.drop_duplicates(subset=['filename', "offset"]).shape[0]
+    Pred_Pos = pred.drop_duplicates(subset=relevant_columns).shape[0]
+    print(Pred_Pos)
 
     # Gold Standard Positives:
     GS_Pos_per_cc = \
-        gs.drop_duplicates(subset=['filename', "offset"]).\
+        gs.drop_duplicates(subset=relevant_columns).\
         groupby("filename")["offset"].count()
-    GS_Pos = gs.drop_duplicates(subset=['filename', "offset"]).shape[0]
+    GS_Pos = gs.drop_duplicates(subset=relevant_columns).shape[0]
     
     # Eliminate predictions not in GS (prediction needs to be in same clinical
     # case and to have the exact same offset to be considered valid!!!!)
     df_sel = pd.merge(pred, gs, 
                       how="right",
-                      on=["filename", "offset", "label"])
+                      on=relevant_columns)
     
     if subtask=='norm':
         # Check if codes are equal

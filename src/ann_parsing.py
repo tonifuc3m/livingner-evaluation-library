@@ -25,6 +25,10 @@ def main(datapath, relevant_labels):
     df_ok = df.loc[df['label'].isin(relevant_labels),:].copy()
     df_ok['offset'] = df_ok['off0'].astype(str) + ' ' + df_ok['off1'].astype(str)
     
+    if df_ok.shape[0] != df_ok.drop_duplicates(subset=['filename', 'label', 'offset']).shape[0]:
+        warnings.warn(f"There are duplicated entries in {datapath}. Removing them...")
+        df_ok = df_ok.drop_duplicates(subset=['filename', 'label', 'offset']).copy()
+        
     return df_ok
 
 
@@ -36,4 +40,7 @@ def main_subtrack3(datapath):
         warnings.warn('There are not parsed annotations')
         return df
     
+    if df.shape[0] != df.drop_duplicates(subset=['filename']).shape[0]:
+        warnings.warn(f"There are filenames with more than one row in {datapath}. Keeping just the first one...")
+        df = df.drop_duplicates(subset=['filename']).copy()
     return df
