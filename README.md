@@ -43,6 +43,15 @@ python main.py -g ../gs-data/sample_subtask3.tsv -p ../toy-data/sample_subtask3_
 
 # 4. Other interesting stuff:
 
+### Steps:
+1. Load GS file with annotations
+2. Check the GS file columns are correct
+3. Check the GS file is not empty
+4. Check the GS codes (if in subtask Norm or Clinical Application) are correct
+5. Repeat steps 1-4 with the predictions file
+6. Remove from predictions file the lines corresponding to documents not present in the Gold Standard
+7. Compute the metrics
+
 ### Metrics
 
 For the three subtasks, the relevant metrics are precision, recall and f1-score. The latter will be used to decide the award winners.
