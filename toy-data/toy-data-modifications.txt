@@ -1,0 +1,30 @@
+sample_entities_subtask1_ALL_SPECIES.tsv
+Put all labels as SPECIES.
+
+
+sample_entities_subtask1_ONLY_SPECIES
+Keep only SPECIES predictions.
+
+
+sample_entities_subtask1_ONLY_HUMAN.tsv
+Keep only HUMAN predictions.
+
+
+sample_entities_subtask1_MISSING_ONE_FILE
+Predictions for file 32032497_ES are removed
+
+
+sample_entities_subtask2_predictions.tsv
+line 2: 9606 -> 9606|H
+line 3: 9606 -> OTHER_CODE
+line 4: T3 -> T2
+line 5: 9606 -> 9606|2| AND T4 -> T3
+line 6: SPECIES -> HUMAN AND T5 -> T4
+line 7: T6 -> T5
+line 138: 12092|10407 -> 12092|10407|10407
+line 139: 12092|10407|11103 -> 12092|10407|11103
+
+
+sample_subtask3_predictions.tsv
+caso_clinico_alergologia23: column FoodIDs, 3760+3755+42345+79200+2711+3435+85571+3750+4045 -> 3760|H+3755|3755|+42345+79200+2711+3435+85571+3750+4045
+es-S1130-63432015000400006-1: column isNosocomial, Yes->No AND column NosocomialIDs, 1282|H -> 1282+whatever|H

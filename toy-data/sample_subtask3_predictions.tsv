@@ -1,7 +1,7 @@
 filename	isPet	PetIDs	isAnimalInjury	AnimalInjuryIDs	isFood	FoodIDs	isNosocomial	NosocomialIDs
 caso_clinico_radiologia882	No	NA	No	NA	No	NA	No	NA
 caso_clinico_neurologia78	Yes	9031	No	NA	Yes	9031	No	NA
-caso_clinico_alergologia23	No	NA	No	NA	Yes	3760+3755+42345+79200+2711+3435+85571+3750+4045	No	NA
+caso_clinico_alergologia23	No	NA	No	NA	Yes	3760|H+3755|3755|+42345+79200+2711+3435+85571+3750+4045	No	NA
 caso_clinico_medicina_interna133	No	NA	Yes	6935+7157	No	NA	No	NA
 casos_clinicos_infecciosas93	Yes	9685+6202+9615	Yes	6202	Yes	6202	No	NA
 es-S1130-63432015000400006-1	No	NA	No	NA	No	NA	No	1282+whatever|H

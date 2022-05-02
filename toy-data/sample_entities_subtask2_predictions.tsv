@@ -135,6 +135,6 @@ casos_clinicos_infecciosas1	T49	SPECIES	6023	6040	virus hepatitis A	12092
 casos_clinicos_infecciosas1	T50	SPECIES	2857	2871	estreptocócica	1301
 casos_clinicos_infecciosas1	T54	SPECIES	4797	4809	Bacteriemias	2
 casos_clinicos_infecciosas1	T56	SPECIES	5968	5986	Virus Epstein Barr	10376
-casos_clinicos_infecciosas1	T57	SPECIES	6023	6042	virus hepatitis A,B	12092|10407
+casos_clinicos_infecciosas1	T57	SPECIES	6023	6042	virus hepatitis A,B	12092|10407|10407
 casos_clinicos_infecciosas1	T58	SPECIES	6023	6044	virus hepatitis A,B,C	12092|10407|11103
 casos_clinicos_infecciosas1	T62	SPECIES	6046	6053	rubeola	11041
