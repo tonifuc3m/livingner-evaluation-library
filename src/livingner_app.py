@@ -13,30 +13,14 @@ def warning_on_one_line(message, category, filename, lineno, file=None, line=Non
     return '%s:%s: %s: %s\n' % (filename, lineno, category.__name__, message)
 warnings.formatwarning = warning_on_one_line
 
-def isNaN(num):
-    return num != num
 
-def sort_codes(codes):
-    return '+'.join(sorted(list(set(codes.split('+')))))
     
 def main(gs_path, pred_path, codes_path):
     
     gs = ann_parsing.main_subtrack3(gs_path, codes_path)
     pred = ann_parsing.main_subtrack3(pred_path, codes_path)
     
-    clinical_application = ['Pet', 'AnimalInjury', 'Food', 'Nosocomial']
-    
-    # Remove predicted duplicated codes & Order them to allow string comparison with
-    # Gold Standard
-    # E.g. if "3847+9913+9913" was predicted, set it to 3847+9913
-    for colname in clinical_application:
-        pred[colname + 'IDs'] = pred[colname + 'IDs'].\
-            apply(lambda k: sort_codes(k) if isNaN(k) == False else k)
-    
-        gs[colname + 'IDs'] = gs[colname + 'IDs'].\
-            apply(lambda k: sort_codes(k) if isNaN(k) == False else k)
-    
-    # TODO: check codes are in terminology
+    clinical_application = ['Pet', 'AnimalInjury', 'Food', 'Nosocomial']   
 
     # Compute metrics
     print("Basic metrics (not taking into account NCBI codes, just Y/N assignment)")
