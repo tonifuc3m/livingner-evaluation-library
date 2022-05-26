@@ -19,7 +19,7 @@ def main(datapath, relevant_labels, codes_path):
     
     # Load
     valid_codes = set(map(lambda k: k.strip(), open(codes_path).readlines()))
-    df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE, keep_default_na=False)
+    df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE, keep_default_na=False, dtype=str)
 
     # Check column names are correct
     if ','.join(df.columns) == ','.join(['filename','mark','label','off0','off1','span']):
@@ -70,7 +70,7 @@ def main_subtrack3(datapath, codes_path):
     # Load
     valid_codes = set(map(lambda k: k.strip(), open(codes_path).readlines()))
     valid_codes.add('NA')
-    df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE, keep_default_na=False)
+    df = pd.read_csv(datapath, sep='\t', header=0, quoting=csv.QUOTE_NONE, keep_default_na=False, dtype=str)
 
     # Check column names are correct
     colnames = ['filename','isPet','PetIDs','isAnimalInjury', 'AnimalInjuryIDs',
@@ -126,7 +126,7 @@ def format_codes(codes, good_separator='|', bad_separator='+'):
 
     '''
     # Make sure separator is "|"
-    codes_good_separator = codes.replace(bad_separator, good_separator)
+    codes_good_separator = codes.strip().replace(bad_separator, good_separator)
     
     # In case the code is multiple, sort them and remove duplicated
     # E.g. if "9913|9913|3847" was predicted, set it to 3847|9913
