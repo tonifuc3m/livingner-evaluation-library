@@ -256,3 +256,14 @@ F1score = 0
 -----------------------------------------------------
 ```
 
+
+Please cite if you use this resource:
+
+A. Miranda-Escalada, E. Farré-Maduell, S. Lima-López, D. Estrada, L. Gascó, M. Krallinger, Mention detection, normalization & classification of species, pathogens, humans and food in clinical documents: Overview of livingner shared task and resources, Procesamiento del Lenguaje Natural (2022)
+
+@article{amiranda2022nlp,
+title={Mention detection, normalization \& classification of species, pathogens, humans and food in clinical documents: Overview of LivingNER shared task and resources},
+author={Miranda-Escalada, Antonio and Farr{\'e}-Maduell, Eul{`a}lia and Lima-L{\'o}pez, Salvador and Estrada, Darryl and Gasc{\'o}, Luis and Krallinger, Martin},
+journal = {Procesamiento del Lenguaje Natural},
+year={2022}
+}
